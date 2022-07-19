@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        <%= title %>
+    </title>
+
+    <!-- Font awesome to incorporate icons -->
+    <script src="https://kit.fontawesome.com/ba47d09c57.js" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="/styles/home.css">
+</head>
+
+<body>
+    <!-- Outer Container -->
+    <div id="container">
+        <h1>
+            <%= title %>
+        </h1>
+        <form id="input-form" action="/add-task" method="POST">
+
+            <div id="input-container">
+
+                <!-- To enter the task to be added to To Do List -->
+                <div id="description">
+                    <label for="description">Description</label> <br>
+                    <input type="text" name="description" placeholder="Add a task" required>
+                </div>
+
+                <!-- To enter the category of the task -->
+                <div id="category">
+                    <label for="category">Category</label> <br>
+                    <select name="category">
+                        <option disabled selected value> Choose a category </option>
+                        <option value="Personal">Personal</option>
+                        <option value="Work">Work</option>
+                        <option value="School">School</option>
+                        <option value="Cleaning">Cleaning</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <!-- To enter the date for the task -->
+                <div id="date">
+                    <label for="dueDate">Due Date</label> <br>
+                    <input type="date" name="dueDate">
+                </div>
+
+            </div>
+                
+        </form>
+
+        <!-- Div that contains both the button to delete & add the task -->
+        <div id="button-container">
+            <button type="submit" id="add-btn" form="input-form">
+                <i class="fa-solid fa-plus"></i>
+                Add Task
+            </button>
+            <button type="submit" id="del-btn" form="delete-form">
+                <i class="fa-solid fa-trash-can"></i>
+                Delete Tasks
+            </button>
+        </div>
+
+        <!-- Div that contains the added tasks -->
+        <div id="task-container">
+            <form id="delete-form" action="/delete-task" method="POST">
+                <% for(let i = 0; i < task_list.length; i++) { %>
+                    <div class="task">
+                        <div class="checkbox">
+                            <input type="checkbox" name= "tasks" class="item" value="<%= task_list[i]._id %>" id="<%= 'tasks' + (i + 1) %>" >
+                            <label for="<%= 'tasks' + (i + 1) %>">
+                                <%= task_list[i].description %>
+                            </label>
+
+                            <p class="date"> 
+                                <i class="fa-solid fa-calendar-days"></i>
+                                <%= task_list[i].dueDate %>
+                            </p>
+                        </div>
+                        
+                        <% if(task_list[i].category != undefined) { %>
+                        <span class="category"> <%= task_list[i].category %> </span>
+                        <% } %>
+
+                        <br>
+                    </div>
+                <% } %>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

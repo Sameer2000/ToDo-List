@@ -1,0 +1,166 @@
+/* importing google fonts - Raleway */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700&display=swap');
+
+
+/* Declaring variables */
+:root {
+    --black: rgb(80, 80, 80);
+    --red: #EE351E;
+    --border: rgb(200, 200, 200);
+}
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    background-color: #2F80ED;
+    background-size: cover;
+    font-family: 'Raleway', sans-serif;
+    color: var(--black);
+}
+
+/* outer container */
+#container {
+    width: 45vw;
+    min-width: 350px;
+    height: 90vh;
+    margin: 30px auto;
+    background-color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#container div {
+    padding: 5px;
+}
+
+/* input */
+#description {
+    grid-area: description;
+    border-top: 1px solid var(--border);
+}
+
+#description input{
+    width: 100%;
+    height: 40px;
+    font-size: 15px;
+    border: none;
+    padding: 20px 0;
+}
+
+#category {
+    grid-area: category;
+    border: 1px solid var(--border);
+    border-left: none;
+}
+
+#category select{
+    width: 100%;
+    height: 30px;
+    border: none;
+}
+
+#date {
+    grid-area: date;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+#date input {
+    width: 100%;
+    height: 30px;
+    border: none;
+    padding-bottom: 20px;
+}
+
+#input-container {
+    display: grid;
+    grid-template-areas: 'description description' 'category date';
+    margin: 0;
+    padding: 0;
+}
+
+#input-container > div{
+    text-align: left;
+}
+
+#input-container label{
+    font-size: 15px;
+    width: 100%;
+    font-weight: bold;
+}
+
+input:focus{
+    outline: none;
+}
+
+/* Buttons */
+#button-container button{
+    height: 50px;
+    width: 200px;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+#button-container #add-btn{
+    background-color: #2F80ED;
+    color: white;
+    border: none;
+}
+
+#button-container #del-btn {
+    border: 1px solid var(--black);
+    color: var(--black);
+    background-color: azure;
+}
+
+/* tasks list */
+#task-container {
+    min-height: 100px;
+    height: 35%;
+    overflow-y: scroll;
+}
+
+.task {
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 1px solid var(--border);
+    text-align: left;
+    justify-content: space-between;
+    flex: 0 0 100%;
+}
+
+.task .checkbox {
+    font-size: 1rem;
+    width: 80%;
+}
+
+.task .checkbox input {
+    margin: 10px;
+}
+
+.task .checkbox .date {
+    font-size: 0.8rem;
+    margin-left: 38px;
+}
+
+.item[type=checkbox]:checked + label {
+    text-decoration: line-through; 
+}
+
+span.category {
+    margin-top: 15px;
+    align-self: flex-start;
+    padding: .25em .75em;
+    font-size: 1rem;
+    background: #56CCF2;
+    background: linear-gradient(to bottom, #2F80ED, #56CCF2);
+    color: #fafafa;
+    border-radius: 5px;
+}
