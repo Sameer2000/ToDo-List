@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const port = 3000;
 
 const db = require('./config/mongoose');
 const Task = require('./models/task');
@@ -18,9 +17,9 @@ app.use(express.static('./assets'));
 app.use('/', require('./routes'));
 
 // To run the server
-app.listen(port, function(err) {
+app.listen(process.env.PORT || 3000, function(err) {
     if(err) {
         console.log(`Error in running the server: ${err}`);
     }
-    console.log(`Server is running on port: ${port}`);
+    console.log('Server is up & running');
 })
