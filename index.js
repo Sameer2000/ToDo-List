@@ -16,8 +16,13 @@ app.use(express.static('./assets'));
 // Using express router
 app.use('/', require('./routes'));
 
+let port = process.env.PORT;
+if(port == null || port == ""){
+    port = 3000;
+}
+
 // To run the server
-app.listen(process.env.PORT || 3000, function(err) {
+app.listen(port, function(err) {
     if(err) {
         console.log(`Error in running the server: ${err}`);
     }
