@@ -1,6 +1,6 @@
 # ToDo-List
 
-![](assets/screenshot.png)
+![](assets/images/homepage.png)
 
 # ABOUT
 This is a To Do List Project in which user can add any task of any category for a particular date. The data that user entered will be stored in a database. You can access this web application by running it on localhost:3000 after installing express.
