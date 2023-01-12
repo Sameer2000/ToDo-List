@@ -2,10 +2,10 @@
 
 ![](assets/images/homepage.png)
 
-Check it out on -> https://polar-caverns-29584.herokuapp.com/
+Check it out on -> https://todo-list-mn0l.onrender.com/
 
 # ABOUT
-This is a To Do List Project in which user can add any task of any category for a particular date. The data that user entered will be stored in a database which is hosted on MongoDB Atlas. The app itself is hosted on heroku.
+This is a To Do List Project in which user can add any task of any category for a particular date. The data that user entered will be stored in a database which is hosted on MongoDB Atlas. The app itself is hosted on render.
 
 # TECHSTACK
 Node.Js, HTML, CSS, JavaScript, MongoDB
